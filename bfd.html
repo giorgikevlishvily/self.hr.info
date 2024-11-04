@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self.HR - HR მართვის გამარტივება</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #3498db;
+        }
+
+        .language-selector {
+            margin-top: 10px;
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .feature {
+            background: #e9ecef;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #2980b9;
+        }
+
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="your-image-url.jpg" alt="Self.HR Banner"> <!-- Replace with your image URL -->
+        <h1>Self.HR</h1>
+        <div class="language-selector">
+            <label for="language">ენა: </label>
+            <select id="language" onchange="setLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="ka" selected>ქართული</option>
+            </select>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#features">მახასიათებლები</a></li>
+                <li><a href="#benefits">სარგებელი</a></li>
+                <li><a href="#contact">კონტაქტი</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="intro">
+        <h2 id="intro-title">Self.HR-ის კეთილი იყოს თქვენი მობრძანება</h2>
+        <p id="intro-description">Self.HR არის ღრუბლური HR მართვის გადაწყვეტილება, რომელიც გაძლიერებს თანამშრომლებს და ამარტივებს HR პროცესებს ბიზნესისთვის.</p>
+    </section>
+
+    <section id="features">
+        <h2>მახასიათებლები</h2>
+        <div class="feature">
+            <h3>თანამშრომლის თვითმმართველობა</h3>
+            <p>განათავსეთ თანამშრომლები, რომ დამოუკიდებლად მართონ საკუთარი HR დავალებები ადვილად გამოყენებადი ინტერფეისით.</p>
+        </div>
+        <div class="feature">
+            <h3>ხელფასების მართვა</h3>
+            <p>სათანადო და დროული ხელფასების უზრუნველსაყოფად ავტომატიზირება ხელფასების პროცესების.</p>
+        </div>
+        <div class="feature">
+            <h3>რეალურ დროში ანალიტიკა</h3>
+            <p>მიღწევებისა და ანალიტიკის წვდომა ინფორმირებული გადაწყვეტილებების მიღებისთვის და გაუმჯობესებული HR სტრატეგიებისთვის.</p>
+        </div>
+    </section>
+
+    <section id="benefits">
+        <h2 id="benefits-title">Self.HR-ის სარგებელი</h2>
+        <p id="benefits-description">Self.HR-ით კომპანიები შეუძლიათ შეამცირონ ადმინისტრაციული ხარჯები, გააუმჯობესონ კომუნიკაცია და გაზარდონ თანამშრომელთა კმაყოფილება.</p>
+        <button class="cta-button" onclick="alert('დამატებითი ინფორმაციისთვის დაგვიკავშირდით!')">დაწყება</button>
+    </section>
+
+    <section id="contact">
+        <h2 id="contact-title">კონტაქტი</h2>
+        <p id="contact-email">ელ.ფოსტა: info@self.hr</p>
+        <p id="contact-website">ვებსაიტი: <a href="https://www.self.hr" target="_blank">www.self.hr</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Self.HR. ყველა უფლება დაცულია.</p>
+    </footer>
+
+    <script>
+        function setLanguage(lang) {
+            const introTitle = document.getElementById("intro-title");
+            const introDescription = document.getElementById("intro-description");
+            const featureTitles = document.querySelectorAll(".feature h3");
+            const featureDescriptions = document.querySelectorAll(".feature p");
+            const benefitsTitle = document.getElementById("benefits-title");
+            const benefitsDescription = document.getElementById("benefits-description");
+            const contactTitle = document.getElementById("contact-title");
+            const contactEmail = document.getElementById("contact-email");
+            const contactWebsite = document.getElementById("contact-website");
+
+            if (lang === 'en') {
+                introTitle.innerText = "Welcome to Self.HR";
+                introDescription.innerText = "Self.HR is a cloud-based HR management solution that empowers employees and simplifies HR processes for businesses.";
+
+                featureTitles[0].innerText = "Employee Self-Service";
+                featureDescriptions[0].innerText = "Empower employees to manage their own HR tasks independently through a user-friendly interface.";
+                featureTitles[1].innerText = "Payroll Management";
+                featureDescriptions[1].innerText = "Automate payroll processes to ensure timely and accurate payments to employees.";
+                featureTitles[2].innerText = "Real-Time Analytics";
+                featureDescriptions[2].innerText = "Access insights and analytics for informed decision-making and improved HR strategies.";
+
+                benefitsTitle.innerText = "Benefits of Self.HR";
+                benefitsDescription.innerText = "With Self.HR, companies can reduce administrative overhead, enhance communication, and improve employee satisfaction.";
+
+                contactTitle.innerText = "Contact Us";
+                contactEmail.innerText = "Email: nino.peikrishvili@gmail.com";
+                contactWebsite.innerText = "Website: www.self.hr";
+            } else if (lang === 'ka') {
+                introTitle.innerText = "Self.HR-ის კეთილი იყოს თქვენი მობრძანება";
+                introDescription.innerText = "Self.HR არის ღრუბლური HR მართვის გადაწყვეტილება, რომელიც გაძლიერებს თანამშრომლებს და ამარტივებს HR პროცესებს ბიზნესისთვის.";
+
+                featureTitles[0].innerText = "თანამშრომლის თვითმმართველობა";
+                featureDescriptions[0].innerText = "განათავსეთ თანამშრომლები, რომ დამოუკიდებლად მართონ საკუთარი HR დავალებები ადვილად გამოყენებადი ინტერფეისით.";
+                featureTitles[1].innerText = "ხელფასების მართვა";
+                featureDescriptions[1].innerText = "სათანადო და დროული ხელფასების უზრუნველსაყოფად ავტომატიზირება ხელფასების პროცესების.";
+                featureTitles[2].innerText = "რეალურ დროში ანალიტიკა";
+                featureDescriptions[2].innerText = "მიღწევებისა და ანალიტიკის წვდომა ინფორმირებული გადაწყვეტილებების მიღებისთვის და გაუმჯობესებული HR სტრატეგიებისთვის.";
+
+                benefitsTitle.innerText = "Self.HR-ის სარგებელი";
+                benefitsDescription.innerText = "Self.HR-ით კომპანიები შეუძლიათ შეამცირონ ადმინისტრაციული ხარჯები, გააუმჯობესონ კომუნიკაცია და გაზარდონ თანამშრომელთა კმაყოფილება.";
+
+                contactTitle.innerText = "კონტაქტი: 544445050"
+                contactEmail.innerText = "ელ.ფოსტა: nino.peikrishvili@gmail.com";
+                contactWebsite.innerText = "ვებსაიტი: www.self.hr";
+            }
+        }
+    </script>
+
+</body>
+</html>
